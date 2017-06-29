@@ -1,6 +1,9 @@
 import java.security.cert.Certificate;
+<<<<<<< HEAD
 
 import sun.net.www.content.text.plain;
+=======
+>>>>>>> c5335c34a39622019ab7989759fa9ce16e75d89d
 public abstract class CAServer 
 {
 	private static String Name="CA";
@@ -24,7 +27,10 @@ public abstract class CAServer
 		
 			Cert[i]=RSACoder.PrivateEncrypt(Info, RSACoder.getPrivateKey());
 		}
+<<<<<<< HEAD
 		RSACoder.Certificate=Cert[0];
+=======
+>>>>>>> c5335c34a39622019ab7989759fa9ce16e75d89d
 	}
 	
 	public static String GetCert(int Num) throws Exception
@@ -33,7 +39,11 @@ public abstract class CAServer
 	}
 	public static String CreateCAPackage(int SendNum,int KeyNum) throws Exception
 	{
+<<<<<<< HEAD
 		if(Cert[SendNum].isEmpty())
+=======
+		if(Cert[SendNum]==null)
+>>>>>>> c5335c34a39622019ab7989759fa9ce16e75d89d
 			GeneraeCert();
 		ToSend.SendHeader=Integer.toString(SendNum);
 		ToSend.Certifacte=RSACoder.Certificate;
@@ -51,11 +61,21 @@ public abstract class CAServer
 	 	 if(RSACoder.VerifySig(Integer.parseInt(ToReceive.Header), ToReceive.Sig, 
 	 			 RSACoder.getPublicKey(Integer.parseInt(ToReceive.Header))))
 	 			 {
+<<<<<<< HEAD
 	 		 		
 	 		 		String Plain=RSACoder.PrivateDecrypt(ToReceive.Plain, RSACoder.getPrivateKey());
 	 		 		System.out.println(Plain.length());
 	 		 		Sender=Integer.parseInt(ToReceive.Header);
 	 		 		Receiver=Integer.parseInt(Plain.substring(0, 1));//指代公钥持有者
+=======
+	 		 		String Plain=RSACoder.PrivateDecrypt(ToReceive.Plain, RSACoder.getPrivateKey());
+	 		 		Sender=Integer.parseInt(ToReceive.Header);
+<<<<<<< HEAD
+	 		 		Receiver=Integer.parseInt(Plain.substring(0, 1));//指代公钥持有者
+=======
+	 		 		Receiver=Integer.parseInt(Plain.substring(0, 1));
+>>>>>>> d36f1a5940359af85a1a60ef452aa152a80ab6de
+>>>>>>> c5335c34a39622019ab7989759fa9ce16e75d89d
 	 		 		return "Have Verified!You want to connect with "+Plain.substring(0,1);
 	 			 }
 	 	 else

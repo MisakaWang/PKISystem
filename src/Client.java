@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> c5335c34a39622019ab7989759fa9ce16e75d89d
 import java.awt.*;
 import java.awt.event.*;
 import java.io.InputStream;
@@ -226,9 +230,17 @@ public class Client extends JFrame implements ActionListener {
 								boolean FindIt=false;
 								for(PersonalFrame pf:personalFrames){
 									if(pf.getName().equals(msg.getFrom())||pf.getName().equals(msg.getTo())){										
+<<<<<<< HEAD
 																												
 										pf.showMsg(msg);
 																				
+=======
+																		
+										
+										pf.showMsg(msg);
+										
+										
+>>>>>>> c5335c34a39622019ab7989759fa9ce16e75d89d
 										System.out.println("成功找到！");
 										FindIt=true;
 										break;
@@ -239,7 +251,11 @@ public class Client extends JFrame implements ActionListener {
 									
 									System.out.println("成功创建！");
 									System.out.println("证书是："+RSACoder.Certificate+"\n");
+<<<<<<< HEAD
 									System.out.println("PK是："+RSACoder.getPublicKey(Integer.parseInt(name))+"\n");
+=======
+									System.out.println("PK是："+RSACoder.getPublicKey(2)+"\n");
+>>>>>>> c5335c34a39622019ab7989759fa9ce16e75d89d
 									//myFrame.showMsg(msg);
 								}
 							}/*else{
@@ -326,12 +342,17 @@ public class Client extends JFrame implements ActionListener {
 			ExitProgram();
 		}else if(comm.equals("关于本软件")){
 			JOptionPane.showMessageDialog(this, "客户端");
+<<<<<<< HEAD
 		}else if(comm.equals("请求证书")){
 			
 			if(wanted.getText()==null||wanted.getText().equals(""))
 				JOptionPane.showMessageDialog(this, "不能为空");
 			else
 				SendToCA();
+=======
+		}else if(comm.equals("请求证书")){			
+			SendToCA();
+>>>>>>> c5335c34a39622019ab7989759fa9ce16e75d89d
 		}
 		else{
 			System.out.println("不识别的事件");
@@ -360,7 +381,11 @@ public class Client extends JFrame implements ActionListener {
     { 
         if(event.getModifiers()==MouseEvent.BUTTON1_MASK&&event.getClickCount()==2) 
         { 
+<<<<<<< HEAD
         	if(!userList.getSelectedValue().toString().equals("0"))
+=======
+        	if(!userList.getSelectedValue().toString().equals("CA"))
+>>>>>>> c5335c34a39622019ab7989759fa9ce16e75d89d
         		
         	{
         		System.out.println("选中客户端"+userList.getSelectedValue().toString());
@@ -370,10 +395,16 @@ public class Client extends JFrame implements ActionListener {
         		personalFrames.add(myFrame);
         		//System.out.println(SendNum);
         	}
+<<<<<<< HEAD
         	if(userList.getSelectedValue().toString().equals("0"))
         		{
         		
         			System.out.println("选中0");
+=======
+        	if(userList.getSelectedValue().toString().equals("CA"))
+        		{
+        			System.out.println("选中CA");
+>>>>>>> c5335c34a39622019ab7989759fa9ce16e75d89d
         		//SendToCA();
         		}
     		
@@ -387,3 +418,22 @@ public class Client extends JFrame implements ActionListener {
 		new Client();
 	}
 }
+<<<<<<< HEAD
+=======
+=======
+import java.util.Base64;
+
+public class Client {
+	
+    public static void main(String[] args) throws Exception {  
+    	RSACoder.KeyInit();
+    	//CAServer.GeneraeCert();
+    String tmp=RSACoder.PublicEncrypt("hello", RSACoder.getPublicKey(1));
+    System.out.println(RSACoder.PrivateDecrypt(tmp, RSACoder.getPrivateKey()));
+    	
+  }  
+    
+     
+}
+>>>>>>> d36f1a5940359af85a1a60ef452aa152a80ab6de
+>>>>>>> c5335c34a39622019ab7989759fa9ce16e75d89d
