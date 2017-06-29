@@ -50,7 +50,11 @@ public abstract class CAServer
 	 			 {
 	 		 		String Plain=RSACoder.PrivateDecrypt(ToReceive.Plain, RSACoder.getPrivateKey());
 	 		 		Sender=Integer.parseInt(ToReceive.Header);
+<<<<<<< HEAD
 	 		 		Receiver=Integer.parseInt(Plain.substring(0, 1));//指代公钥持有者
+=======
+	 		 		Receiver=Integer.parseInt(Plain.substring(0, 1));
+>>>>>>> d36f1a5940359af85a1a60ef452aa152a80ab6de
 	 		 		return "Have Verified!You want to connect with "+Plain.substring(0,1);
 	 			 }
 	 	 else
